@@ -40,19 +40,20 @@ Package requirements
 10. `numpy`
 11. `netCDF4`
 
-## Section 1: Cleaning up the data and calculating seasonal values environmental and physiological parameters
+## Section 1: Cleaning up the ROMS-COBALT hindcast data and calculating seasonal values environmental and physiological parameters
 
 Please read this section if you are interested in calculating seasonal variables from the ROMS hindcast datasets. Seasonal values are calculated for salinity, zooplankton density, and dissolved oxygen. Metabolic Index (MI) is then calculated from these values and associated with each haul. This is done by `part_01_calculate_seasonal_values.py` in the Python subfolder. The decadal differences for several environmental parameters is calculated by `part_02_visualize_change_over_time_nwa.py` in the same subfolder.
 
 
 
-## Section 2: Species Distribution Models
+## Section 2: Data Prep & Species Distribution Models
 
-This section contains the code required to run a list of alternative species distribution models for Black Sea Bass. The list of models is shown below with the relevant .R file. These are shown in the table below with links to the specific file
+The `R/data_prep` folder contains code for prepping the output from Section 1 for model runs.
+The `R/models` contains the code to run a list of alternative species distribution models for Black Sea Bass. The list of models is shown below with links to the relevant .R file.
 
 |Model class   |Model name   | Abbreviation  | File  |
 |---|---|---|---|
-|-   |Null model   |-   | [[1]](sp_dist_model_01_null_model.R)  |
+|-   |Null model   |-   | [[1]](https://github.com/wajra/bsb-shift-drivers/blob/main/R/models/sp_dist_model_01_null_model.R)  |
 |T   |Temperature + Dissolved Oxygen   |T+O   |   |
 |T   |Temperature + Salinity   |T+S   |   |
 |T   |Temperature + Zooplankton   |T+Z   |   |
@@ -71,8 +72,11 @@ This section contains the code required to run a list of alternative species dis
 |T:O   |Temperature-Oxygen interaction + Zooplankton   |T:O+Z   |   |
 |T:O   |Temperature-Oxygen interaction + Salinity + Zooplankton   |T:O+S+Z   |   |
 
-Each model run produces PDF plots with GAM smooths for presence/absence and biomass as well as saved model objects for the GAMs. 
+Each model run produces PDF plots with GAM smooths for presence/absence and biomass as well as saved model objects for the GAMs.
 
 ## Section 3: Visualizing SDM results
 
+Visualizations for the best performing model is done by the code in `R/models_viz`.
+
+If you run into any issues running this code, please feel free to reach out to me (jeewantha.bandara@rutgers.edu)
 
