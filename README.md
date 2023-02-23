@@ -72,11 +72,11 @@ The `R/models` contains the code to run a list of alternative species distributi
 |T:O   |Temperature-Oxygen interaction + Zooplankton   |T:O+Z   |   |
 |T:O   |Temperature-Oxygen interaction + Salinity + Zooplankton   |T:O+S+Z   |   |
 
-Each model run produces PDF plots with GAM smooths for presence/absence and biomass as well as saved model objects for the GAMs.
+Each model run produces PDF plots with GAM smooths for presence/absence and biomass as well as saved model objects for the GAMs. These outputs are stored in the `roms_tt_split_output` folder.
 
 ## Section 3: Visualizing SDM results
 
-Visualizations for the best performing model is done by the code in `R/models_viz`.
+Visualizations for the best performing model are done by the code in `R/models_viz`. These figures can be found in the `roms_tt_split_output/figures` folder.
 
 If you run into any issues running this code, please feel free to reach out to me (jeewantha.bandara@rutgers.edu)
 
