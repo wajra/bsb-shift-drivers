@@ -6,7 +6,7 @@ Please read this text to properly execute the code.
 
 Languages: R (Version 4.1+) and Python (Version 2.7+)
 
-Computer environments: The R code was natively run on an Apple Macbook computer runnig MacOS Catalina 10.15. The Python code was run on **Poseidon**; a Linux server computer housed at the Department of Environmental Sciences ([Link](https://envsci.rutgers.edu/)). Please contact the technical personnel (help@envsci.rutgers.edu) in that department to gain access to or assistance regarding this server. Please note that running the Python code requires a large number of daily ROMS hindcast files that are of significant size (0.7 GB/file). It's not feasible to store these files on a service such as GitHub.
+Computer environments: The R code was natively run on an Apple Macbook computer running MacOS Catalina 10.15. The Python code was run on **Poseidon**; a Linux server computer housed at the Department of Environmental Sciences ([Link](https://envsci.rutgers.edu/)). Please contact the technical personnel (help@envsci.rutgers.edu) in that department to gain access to or assistance regarding this server. Please note that running the Python code requires a large number of daily ROMS hindcast files that are of significant size (0.7 GB/file). It's not feasible to store these files on a service such as GitHub.
 
 
 
@@ -42,17 +42,17 @@ Package requirements
 
 ## Section 1: Cleaning up the data and calculating seasonal values environmental and physiological parameters
 
-Please read this section if you are interested in calculating seasonal variables from the ROMS hindcast datasets. Seasonal values are calculated for salinity, zooplankton density, and dissolved oxygen. Metabolic Index (MI) is then calculated from these values and associated with each haul.
+Please read this section if you are interested in calculating seasonal variables from the ROMS hindcast datasets. Seasonal values are calculated for salinity, zooplankton density, and dissolved oxygen. Metabolic Index (MI) is then calculated from these values and associated with each haul. This is done by `part_01_calculate_seasonal_values.py` in the Python subfolder. The decadal differences for several environmental parameters is calculated by `part_02_visualize_change_over_time_nwa.py` in the same subfolder.
 
 
 
 ## Section 2: Species Distribution Models
 
-This section contains the code required to run a list of alternative species distribution models for Black Sea Bass. The list of models is shown below with the relevant .R file. These are 
+This section contains the code required to run a list of alternative species distribution models for Black Sea Bass. The list of models is shown below with the relevant .R file. These are shown in the table below with links to the specific file
 
 |Model class   |Model name   | Abbreviation  | File  |
 |---|---|---|---|
-|-   |Null model   |-   |   |
+|-   |Null model   |-   | [[1]](sp_dist_model_01_null_model.R)  |
 |T   |Temperature + Dissolved Oxygen   |T+O   |   |
 |T   |Temperature + Salinity   |T+S   |   |
 |T   |Temperature + Zooplankton   |T+Z   |   |
