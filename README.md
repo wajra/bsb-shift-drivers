@@ -86,4 +86,4 @@ Each model run produces PDF plots with GAM smooths for presence/absence and biom
 
 Visualizations for the best performing model are done by the code in `R/models_viz`. These figures can be found in the `roms_tt_split_output/figures` folder.
 
-If you run into any issues running this code, please feel free to reach out to me ([jeewantha.bandara\@rutgers.edu](mailto:jeewantha.bandara@rutgers.edu){.email})
+If you run into any issues running this code, please feel free to reach out to me ([jeewantha.bandara\@rutgers.edu](mailto:jeewantha.bandara@rutgers.edu))
