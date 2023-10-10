@@ -82,6 +82,8 @@ The `R/data_prep` folder contains code for prepping the output from Section 1 fo
 
 Each model run produces PDF plots with GAM smooths for presence/absence and biomass as well as saved model objects for the GAMs. These outputs are stored in the `roms_tt_split_output` folder.
 
+This is still to be updated.
+
 ## Section 3: Visualizing SDM results
 
 Visualizations for the best performing model are done by the code in `R/models_viz`. These figures can be found in the `roms_tt_split_output/figures` folder.
