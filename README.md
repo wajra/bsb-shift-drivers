@@ -63,7 +63,7 @@ _Computer environments_: The R code was natively run on an Apple Macbook compute
 
 ## Section 1: Cleaning up the ROMS-COBALT hindcast data and calculating seasonal values environmental and physiological parameters
 
-Please read this section if you are interested in calculating seasonal variables from the ROMS hindcast datasets. Seasonal values are calculated for salinity, zooplankton density, and dissolved oxygen. Metabolic Index (MI) is then calculated from these values and associated with each haul. This is done by `part_01_calculate_seasonal_values.py` in the Python subfolder. The decadal differences for several environmental parameters is calculated by `part_02_visualize_change_over_time_nwa.py` in the same subfolder.
+Please read this section if you are interested in calculating seasonal variables from the ROMS hindcast datasets. Seasonal values are calculated for salinity, zooplankton density, and dissolved oxygen. Metabolic Index (MI) is then calculated from these values and associated with each haul. This is done by `part_01_calculate_seasonal_values.py` in the `Python` subfolder. The decadal differences for several environmental parameters is calculated by `part_02_visualize_change_over_time_nwa.py` in the same subfolder.
 
 ## Section 2: Data Prep & Species Distribution Models
 
@@ -106,7 +106,6 @@ The `R/models` contains the code to run a list of alternative species distributi
 
 Each model run produces PDF plots with GAM smooths for presence/absence and biomass as well as saved model objects for the GAMs. These outputs are stored in the `roms_tt_split_output` folder.
 
-This is still to be updated.
 
 ## Section 3: Visualizing SDM results
 
