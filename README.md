@@ -1,4 +1,4 @@
-# Repository for Bandara, Pinsky, Curchitser (2023)
+# Repository for Bandara, Curchitser, Pinsky (2023)
 
 This repository contains the code necessary for running the calculations, species distribution models, and visualizations in the associated publication.
 
@@ -23,6 +23,19 @@ Computer environments: The R code was natively run on an Apple Macbook computer 
 9.  `beepr`
 10. `respirometry`
 
+|Package name   |Version   |
+|---|---|
+|tidyverse   |   |
+|mgcv   |   |
+|sf   |   |
+|rnaturalearth   |   |
+|rnaturalearthdata   |   |
+|ggspatial   |   |
+|scales   |   |
+|dismo   |   |
+|beepr   |   |
+|respirometry   |   |
+
 *Python*
 
 1.  `os`
@@ -38,13 +51,24 @@ Computer environments: The R code was natively run on an Apple Macbook computer 
 11. `numpy`
 12. `netCDF4`
 
+|Package name   |Version   |
+|---|---|
+|pandas   |   |
+|pyroms   |   |
+|pyroms_toolbox   |   |
+|matplotlib   |   |
+|mpl_toolkits   |   |
+|numpy   |   |
+|netCDF4   |   |
+
 ## Section 1: Cleaning up the ROMS-COBALT hindcast data and calculating seasonal values environmental and physiological parameters
 
 Please read this section if you are interested in calculating seasonal variables from the ROMS hindcast datasets. Seasonal values are calculated for salinity, zooplankton density, and dissolved oxygen. Metabolic Index (MI) is then calculated from these values and associated with each haul. This is done by `part_01_calculate_seasonal_values.py` in the Python subfolder. The decadal differences for several environmental parameters is calculated by `part_02_visualize_change_over_time_nwa.py` in the same subfolder.
 
 ## Section 2: Data Prep & Species Distribution Models
 
-The `R/data_prep` folder contains code for prepping the output from Section 1 for model runs. The `R/models` contains the code to run a list of alternative species distribution models for Black Sea Bass. The list of models is shown below with links to the relevant .R file.
+The `R/data_prep` folder contains code for prepping the output from Section 1 for model runs. The `data` folder contains all relevant data required to run models and generate figures in the manuscript.
+The `R/models` contains the code to run a list of alternative species distribution models for Black Sea Bass. The list of models is shown below with links to the relevant .R file.
 
 ### Single variable models
 
