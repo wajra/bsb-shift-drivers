@@ -8,9 +8,9 @@ _Languages_: R (Version 4.1+) and Python (Version 2.7+)
 
 _Computer environments_: The R code was natively run on an Apple Macbook computer running MacOS Catalina 10.15. The Python code was run on **Poseidon**; a Linux server computer housed at the Department of Environmental Sciences at Rutgers University ([Link](https://envsci.rutgers.edu/)). Please contact the technical personnel ([help\@envsci.rutgers.edu](mailto:help@envsci.rutgers.edu)) in that department to gain access to or assistance regarding this server. Please note that running certain parts of the Python code requires a large number of daily ROMS hindcast files that are of significant size (0.7 GB/file). It's not feasible to store these files on a service such as GitHub.
 
-#### Package requirements
+## Package requirements
 
-*R*
+### R
 
 |Package name   |Version   |
 |---|---|
@@ -30,7 +30,7 @@ _Computer environments_: The R code was natively run on an Apple Macbook compute
 |Hmisc   |4.7.1   |
 |corrplot   |0.92   |
 
-*Python*
+### Python
 
 |Package name   |Version   |
 |---|---|
