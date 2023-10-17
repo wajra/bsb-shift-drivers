@@ -8,22 +8,19 @@ Languages: Python (Version 2.7+)
 
 The Python code was run on **Poseidon** and **Proteus**; two Linux server computers housed at the Department of Environmental Sciences ([Link](https://envsci.rutgers.edu/)) depending on server availability. Both servers were interchangeable for our purposes. Please contact the technical personnel ([help\@envsci.rutgers.edu](mailto:help@envsci.rutgers.edu){.email}) in that department to gain access to or assistance regarding these servers. Please note that running the Python code requires a large number of daily ROMS hindcast files that are of significant size (0.7 GB/file). It's not feasible to store these files on a service such as GitHub.
 
-#### Package requirements
+## Package requirements
 
-*Python*
+### Python
 
-1.  `os`
-2.  `re`
-3.  `glob`
-4.  `pandas`
-5.  `datetime`
-6.  `dateutil`
-7.  `pyroms`
-8.  `pyroms_toolbox`
-9.  `matplotlib`
-10. `mpl_toolkits` (Basemap)
-11. `numpy`
-12. `netCDF4`
+|Package name   |Version   |
+|---|---|
+|pandas   |0.23+   |
+|pyroms   |1.0+   |
+|pyroms_toolbox   |1.0+   |
+|matplotlib   |2.0+   |
+|mpl_toolkits   |1.2+   |
+|numpy   |1.1+   |
+|netCDF4   |4.3+   |
 
 Please read the following for a general outline and purpose of each of the scripts we have uploaded here
 
