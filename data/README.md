@@ -1,6 +1,6 @@
 # data
 
-This README.md contains a general guide to the data files that are used and generated for Bandara et al. (2023)
+This folder contains a general guide to the data files that are used and generated for Bandara et al. (2023)
 
 A brief description of the files/folders listed here and their purpose
 
