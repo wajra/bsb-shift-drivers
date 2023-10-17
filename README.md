@@ -1,65 +1,46 @@
 # Repository for Bandara, Curchitser, Pinsky (2023)
 
-This repository contains the code necessary for running the calculations, species distribution models, and visualizations in the associated publication.
+This repository contains the code necessary for running the calculations, species distribution models, and visualizations in Bandara et al. (2023) published in Global Change Biology. 
 
-Please read this text to properly execute the code.
+Please read this README.md to properly execute the code.
 
 _Languages_: R (Version 4.1+) and Python (Version 2.7+)
 
-_Computer environments_: The R code was natively run on an Apple Macbook computer running MacOS Catalina 10.15. The Python code was run on **Poseidon**; a Linux server computer housed at the Department of Environmental Sciences ([Link](https://envsci.rutgers.edu/)). Please contact the technical personnel ([help\@envsci.rutgers.edu](mailto:help@envsci.rutgers.edu){.email}) in that department to gain access to or assistance regarding this server. Please note that running the Python code requires a large number of daily ROMS hindcast files that are of significant size (0.7 GB/file). It's not feasible to store these files on a service such as GitHub.
+_Computer environments_: The R code was natively run on an Apple Macbook computer running MacOS Catalina 10.15. The Python code was run on **Poseidon**; a Linux server computer housed at the Department of Environmental Sciences at Rutgers University ([Link](https://envsci.rutgers.edu/)). Please contact the technical personnel ([help\@envsci.rutgers.edu](mailto:help@envsci.rutgers.edu)) in that department to gain access to or assistance regarding this server. Please note that running certain parts of the Python code requires a large number of daily ROMS hindcast files that are of significant size (0.7 GB/file). It's not feasible to store these files on a service such as GitHub.
 
 #### Package requirements
 
 *R*
 
-1.  `tidyverse`
-2.  `mgcv`
-3.  `sf`
-4.  `rnaturalearth`
-5.  `rnaturalearthdata`
-6.  `ggspatial`
-7.  `scales`
-8.  `dismo`
-9.  `beepr`
-10. `respirometry`
-
 |Package name   |Version   |
 |---|---|
-|tidyverse   |   |
-|mgcv   |   |
-|sf   |   |
-|rnaturalearth   |   |
-|rnaturalearthdata   |   |
-|ggspatial   |   |
-|scales   |   |
-|dismo   |   |
-|beepr   |   |
-|respirometry   |   |
+|tidyverse   |1.3.1   |
+|mgcv   |1.8.40   |
+|sf   |1.0.8   |
+|rnaturalearth   |0.1.0   |
+|rnaturalearthdata   |0.1.0   |
+|ggspatial   |1.1.5   |
+|scales   |1.2.1   |
+|dismo   |1.3.5   |
+|beepr   |1.3   |
+|respirometry   |1.3.0   |
+|gridExtra   |2.3   |
+|cowplot   |1.1.1   |
+|DescTools   |0.99.48   |
+|Hmisc   |4.7.1   |
+|corrplot   |0.92   |
 
 *Python*
 
-1.  `os`
-2.  `re`
-3.  `glob`
-4.  `pandas`
-5.  `datetime`
-6.  `dateutil`
-7.  `pyroms`
-8.  `pyroms_toolbox`
-9.  `matplotlib`
-10. `mpl_toolkits` (Basemap)
-11. `numpy`
-12. `netCDF4`
-
 |Package name   |Version   |
 |---|---|
-|pandas   |   |
-|pyroms   |   |
-|pyroms_toolbox   |   |
-|matplotlib   |   |
-|mpl_toolkits   |   |
-|numpy   |   |
-|netCDF4   |   |
+|pandas   |0.23+   |
+|pyroms   |1.0+   |
+|pyroms_toolbox   |1.0+   |
+|matplotlib   |2.0+   |
+|mpl_toolkits   |1.2+   |
+|numpy   |1.1+   |
+|netCDF4   |4.3+   |
 
 ## Section 1: Cleaning up the ROMS-COBALT hindcast data and calculating seasonal values environmental and physiological parameters
 
