@@ -2,11 +2,11 @@
 
 This repository contains the code necessary for running the calculations, species distribution models, and visualizations in Bandara et al. (2023) published in Global Change Biology. 
 
-Please read this README.md to properly execute the code.
+Please read this guide to properly execute the code.
 
 _Languages_: R (Version 4.1+) and Python (Version 2.7+)
 
-_Computer environments_: The R code was natively run on an Apple Macbook computer running MacOS Catalina 10.15. The Python code was run on **Poseidon**; a Linux server computer housed at the Department of Environmental Sciences at Rutgers University ([Link](https://envsci.rutgers.edu/)). Please contact the technical personnel ([help\@envsci.rutgers.edu](mailto:help@envsci.rutgers.edu)) in that department to gain access to or assistance regarding this server. Please note that running certain parts of the Python code requires a large number of daily ROMS hindcast files that are of significant size (0.7 GB/file). It's not feasible to store these files on a service such as GitHub.
+_Computer environments_: The R code was natively run on an Apple Macbook computer running MacOS Catalina 10.15. The Python code was run on **Poseidon**; a Linux server computer housed at the Department of Environmental Sciences at Rutgers University ([Link](https://envsci.rutgers.edu/)). Please contact the technical personnel ([help\@envsci.rutgers.edu](mailto:help@envsci.rutgers.edu)) in that department to gain access to or assistance regarding this server. Please note that running certain parts of the Python code requires a large number of daily ROMS hindcast files that are of significant size (0.7 GB/file). It's not feasible to store these files on a service such as GitHub or FigShare/Zenodo.
 
 ## Package requirements
 
