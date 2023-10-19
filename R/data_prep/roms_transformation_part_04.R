@@ -5,8 +5,7 @@
 # Research Group - Pinsky Lab, Rutgers University (https://pinsky.marine.rutgers.edu)
 # Following Advanced R style guide - http://adv-r.had.co.nz/Style.html
 
-# We'll use this script to make transformations of our right-skewed (lots of zero values)
-# data and try to get them looking more like a normal distribution
+# Attempting some transformations to the haul data
 
 library(tidyverse)
 library(gridExtra)
@@ -14,7 +13,6 @@ library(gridExtra)
 # Load the data in
 # Read the data in as a tibble
 roms_data <- read_csv('data/haul_data_for_transformation_5.csv')
-
 
 # We'll use Prof. James Kirchner's guide to transform data
 # http://seismo.berkeley.edu/~kirchner/eps_120/Toolkits/Toolkit_03.pdf
@@ -131,8 +129,9 @@ collective_plot <- grid.arrange(plot_1, plot_2,plot_3, plot_4, plot_5, nrow=3, n
 
 write_csv(roms_data, 'data/transformed_haul_data_NWA-SZ_HCob10T_including_column_ver_5.csv')
 
-# OK. So following Malin's advise, I will proceed without transforming the data at first.
+# IMPORTANT : We ended up not using the transformed data because transformations didn't really add
+# anything
 
-# Next up is 6_ver_5_bsb_modeling_o2
+# Next up is modeling - `models` folder
 
 #-----------------------------------------------END---------------------------------------------------------------#

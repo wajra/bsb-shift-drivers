@@ -167,9 +167,4 @@ lat_neg_lgzplk_plot <- ggplot(lg_zplk_latitudes, aes(x=lat_groups, y=neg_prop)) 
 # Use gridExtra to gather them together
 grid.arrange(lat_neg_o2_plot, lat_neg_smzplk_plot, lat_neg_mezplk_plot, lat_neg_lgzplk_plot,nrow=2, ncol=2)
 
-
-# So based on this, what we can say is that there is a sort of 'edge effect' that causes a lot of negative values
-# So it would be advisable that these values be dropped
-# Other negative values will be converted to zero
-
 #-----------------------------------------------END---------------------------------------------------------------#
