@@ -6,7 +6,7 @@ Please read this guide to properly execute the code.
 
 _Languages_: R (Version 4.1+) and Python (Version 2.7+)
 
-_Computer environments_: The R code was natively run on an Apple Macbook computer running MacOS Catalina 10.15. The Python code was run on **Poseidon**; a Linux server computer housed at the Department of Environmental Sciences at Rutgers University ([Link](https://envsci.rutgers.edu/)). Please contact the technical personnel ([help\@envsci.rutgers.edu](mailto:help@envsci.rutgers.edu)) in that department to gain access to or assistance regarding this server. Please note that running certain parts of the Python code requires a large number of daily ROMS hindcast files that are of significant size (0.7 GB/file). It's not feasible to store these files on a service such as GitHub or FigShare/Zenodo.
+_Computer environments_: The R code was natively run on an Apple Macbook computer running MacOS Catalina 10.15. The Python code was run on **Poseidon** and **Proteus**, two Linux server computers housed at the Department of Environmental Sciences at Rutgers University ([Link](https://envsci.rutgers.edu/)). Please contact the technical personnel ([help\@envsci.rutgers.edu](mailto:help@envsci.rutgers.edu)) in that department to gain access to or assistance regarding this server. Please note that running certain parts of the Python code requires a large number of daily ROMS hindcast files that are of significant size (0.7 GB/file). It's not feasible to store these files on a service such as GitHub or FigShare/Zenodo.
 
 ## Package requirements
 
@@ -85,7 +85,7 @@ The `R/models` contains the code to run a list of alternative species distributi
 | T:O         | Temperature-Oxygen interaction + Zooplankton                                             | T:O+Z        | [[17]](https://github.com/wajra/bsb-shift-drivers/blob/main/R/models/sp_dist_model_22_interaction_s_z_model.R)                     |
 | T:O         | Temperature-Oxygen interaction + Salinity + Zooplankton                                  | T:O+S+Z      | [[18]](https://github.com/wajra/bsb-shift-drivers/blob/main/R/models/sp_dist_model_23_interaction_z_model.R)                       |
 
-Each model run produces PDF plots with GAM smooths for presence/absence and biomass as well as saved model objects for the GAMs. These outputs are stored in the `roms_tt_split_output` folder.
+Each model run produces PDF plots with GAM smoothed curves for presence/absence and biomass as well as saved model objects for the GAMs. These outputs are stored in the `roms_tt_split_output` folder.
 
 
 ## Section 3: Visualizing SDM results
@@ -93,3 +93,5 @@ Each model run produces PDF plots with GAM smooths for presence/absence and biom
 Visualizations for the best performing model are done by the code in `R/models_viz`. These figures can be found in the `roms_tt_split_output/figures` folder.
 
 If you run into any issues running this code, please feel free to reach out to me ([jeewantha.bandara\@rutgers.edu](mailto:jeewantha.bandara@rutgers.edu))
+
+
