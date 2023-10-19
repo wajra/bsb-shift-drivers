@@ -548,38 +548,6 @@ phi_two_df <- phi_two_df %>% dplyr::filter(sbt_seasonal<=28)
 phi_two_half_df <- phi_two_half_df %>% dplyr::filter(sbt_seasonal<=28)
 
 
-pred_pres_obs <- ggplot(presence_predictions_df, 
-                        aes(SBT.seasonal, O2.seasonal)) + 
-  theme_classic() + 
-  theme(axis.title = element_text(size = 14),
-        axis.text=element_text(size=10),
-        legend.title = element_text(size=12),
-        legend.text = element_text(size=10)) +
-  labs(fill="Probability") + 
-  xlab("") + ylab("Dissolved Oxygen (mg/L)") + xlab("Temperature (C)") +
-  geom_tile(aes(fill = Presence)) +
-  scale_fill_gradient(low="#e5f5e0", high="#31a354") +
-  geom_point(data = other_obs, 
-             mapping = aes(x = SBT.seasonal, y = o2_mgl),
-             shape=1, alpha=0.1, size=1.2,fill=NA,color='grey') +
-  geom_point(data = bsb_environment, 
-             mapping = aes(x = SBT.seasonal, y = o2_mgl),
-             shape=1,alpha=0.3, size=1.2,fill=NA,color='black') +
-  geom_line(data = phi_one_df, 
-            mapping = aes(x = sbt_seasonal, y = o2_seasonal), alpha=0.8,
-            color='#d53e4f') + 
-  geom_line(data = phi_two_df, 
-            mapping = aes(x = sbt_seasonal, y = o2_seasonal), alpha=0.8,
-            color='#fee08b') +
-  geom_line(data = phi_two_half_df, 
-            mapping = aes(x = sbt_seasonal, y = o2_seasonal), alpha=0.8,
-            color='#3288bd')
-
-pred_pres_obs
-
-ggsave(filename="roms_tt_split_output/figures/2023_02_07_interaction_vs_obs_mi.png", 
-       pred_pres_obs, width=5, height=4)
-
 # 2023-02-07
 # Make an alternate plot with different styling
 
