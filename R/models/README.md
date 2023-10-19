@@ -41,7 +41,8 @@ Each of these scripts are a model described in the manuscript. The output of eac
 | MI          | Metabolic Index + Zooplankton                                                            | MI+Z         | [[14]](https://github.com/wajra/bsb-shift-drivers/blob/main/R/models/sp_dist_model_19_mi_z_model.R)                                |
 | MI          | Metabolic Index + Salinity + Zooplankton                                                 | MI+S+Z       | [[15]](https://github.com/wajra/bsb-shift-drivers/blob/main/R/models/sp_dist_model_20_mi_s_z_model.R)                              |
 | T:O         | Temperature-Oxygen interaction + Salinity                                                | T:O+S        | [[16]](https://github.com/wajra/bsb-shift-drivers/blob/main/R/models/sp_dist_model_21_interaction_s_model.R)                       |
-| T:O         | Temperature-Oxygen interaction + Zooplankton                                             | T:O+Z        | [[17]](https://github.com/wajra/bsb-shift-drivers/blob/main/R/models/sp_dist_model_22_interaction_s_z_model.R)                     |
-| T:O         | Temperature-Oxygen interaction + Salinity + Zooplankton                                  | T:O+S+Z      | [[18]](https://github.com/wajra/bsb-shift-drivers/blob/main/R/models/sp_dist_model_23_interaction_z_model.R)                       |
+| T:O         | Temperature-Oxygen interaction + Zooplankton                                             | T:O+Z        | [[17]](https://github.com/wajra/bsb-shift-drivers/blob/main/R/models/sp_dist_model_22_interaction_z_model.R)                     |
+| T:O         | Temperature-Oxygen interaction + Salinity + Zooplankton                                  | T:O+S+Z      | [[18]](https://github.com/wajra/bsb-shift-drivers/blob/main/R/models/sp_dist_model_23_interaction_s_z_model.R)                       |
 
-Each model run produces PDF plots with GAM smooths for presence/absence and biomass as well as saved model objects for the GAMs. These outputs are stored in the `roms_tt_split_output` folder.
+Each model run produces PDF plots with GAM smoothed curves for presence/absence and biomass as well as saved model objects for the GAMs. These outputs are stored in the `roms_tt_split_output` folder.
+
