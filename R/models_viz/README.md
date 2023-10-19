@@ -13,5 +13,6 @@ A brief description of the files listed here and their purpose
 1. `results_viz_part_01.R` - Visualize Figure 1 in the manuscript
 2. `results_viz_part_02.R` - Visualize Figure 4 in the manuscript
 3. `results_viz_part_03.R` - Visualize Figure 3 and Figure S7 in the manuscript
+4. `results_viz_part_04.R` - Visualize Figure S6 (Prevalence and Prediction anomalies) in the supplementary materials
 
 Code for producing Figure 2 in the manuscript can be found in the Python scripts folder.
