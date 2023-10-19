@@ -541,8 +541,6 @@ mi_below_2 <- bsb_environment %>% dplyr::filter(mi<2)
 mi_below_2_5 <- bsb_environment %>% dplyr::filter(mi<2.5)
 
 
-# 2022-05-10
-# Now plot the lines on the presence_plot
 
 # First clean up the lines
 phi_one_df <- phi_one_df %>% dplyr::filter(sbt_seasonal<=28)
@@ -607,10 +605,7 @@ pred_pres_obs_2 <- ggplot(presence_predictions_df,
             color='black', linetype='twodash') + 
   geom_line(data = phi_two_df, 
             mapping = aes(x = sbt_seasonal, y = o2_seasonal), alpha=1,
-            color='#228833', linetype='dashed') +
-  geom_line(data = phi_two_half_df, 
-            mapping = aes(x = sbt_seasonal, y = o2_seasonal), alpha=1,
-            color='#4477aa')
+            color='#228833', linetype='dashed')
 
 ggsave(filename="roms_tt_split_output/figures/temp_oxygen_interaction_vs_obs_mi.png", 
        pred_pres_obs_2, width=5, height=4)
