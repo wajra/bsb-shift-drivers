@@ -6,7 +6,7 @@ Please read this text to properly execute the code.
 
 Languages: Python (Version 2.7+)
 
-The Python code was run on **Poseidon** and **Proteus**; two Linux server computers housed at the Department of Environmental Sciences ([Link](https://envsci.rutgers.edu/)) depending on server availability. Both servers were interchangeable for our purposes. Please contact the technical personnel ([help\@envsci.rutgers.edu](mailto:help@envsci.rutgers.edu){.email}) in that department to gain access to or assistance regarding these servers. Please note that running the Python code requires a large number of daily ROMS hindcast files that are of significant size (0.7 GB/file). It's not feasible to store these files on a service such as GitHub.
+The Python code was run on **Poseidon** and **Proteus**, two Linux server computers housed at the Department of Environmental Sciences at Rutgers University ([Link](https://envsci.rutgers.edu/)). Please contact the technical personnel ([help\@envsci.rutgers.edu](mailto:help@envsci.rutgers.edu)) in that department to gain access to or assistance regarding this server. Please note that running certain parts of the Python code requires a large number of daily ROMS hindcast files that are of significant size (0.7 GB/file). It's not feasible to store these files on a service such as GitHub or FigShare/Zenodo.
 
 ## Package requirements
 
