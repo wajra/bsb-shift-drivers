@@ -612,31 +612,5 @@ pred_pres_obs_2 <- ggplot(presence_predictions_df,
             mapping = aes(x = sbt_seasonal, y = o2_seasonal), alpha=1,
             color='#4477aa')
 
-ggsave(filename="roms_tt_split_output/figures/2023_02_07_interaction_vs_obs_mi_ver_3.png", 
+ggsave(filename="roms_tt_split_output/figures/temp_oxygen_interaction_vs_obs_mi.png", 
        pred_pres_obs_2, width=5, height=4)
-
-# Calculating the percentages
-
-perc_mi_one = dim(mi_below_1)[1]*100/dim(bsb_environment)[1]
-
-perc_mi_two = dim(mi_below_2)[1]*100/dim(bsb_environment)[1]
-
-perc_mi_two_half = dim(mi_below_2_5)[1]*100/dim(bsb_environment)[1]
-
-
-# 2022-06-27
-
-mi_calc <- read.csv("roms_tt_split_output/model_outputs/metabolic_index_zooplankton_model_tt_split_2021_04_11_full_predictions.csv")
-
-# Get the mi below 1, 2, and 2.5
-mi_1 <- mi_calc %>% filter(mi<1)
-mi_2 <- mi_calc %>% filter(mi<2)
-mi_2_5 <- mi_calc %>% filter(mi<2.5)
-
-mi_1_bsb <- mi_1 %>% filter(sppocean=="centropristis striata_Atl")
-mi_2_bsb <- mi_2 %>% filter(sppocean=="centropristis striata_Atl")
-mi_2_5_bsb <- mi_2_5 %>% filter(sppocean=="centropristis striata_Atl")
-
-perc_mi_1 <- dim(mi_1_bsb)[1]*100/dim(mi_1)[1]
-perc_mi_2 <- dim(mi_2_bsb)[1]*100/dim(mi_2)[1]
-perc_mi_2_5 <- dim(mi_2_5_bsb)[1]*100/dim(mi_2_5)[1]

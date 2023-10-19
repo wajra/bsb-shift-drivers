@@ -25,7 +25,7 @@ summary(mi_model_gam_2)
 
 # Biomass model
 
-png(filename="roms_tt_split_output/figures/tosz_biomass_2022_07_13.png",
+png(filename="roms_tt_split_output/figures/tosz_biomass.png",
     width=6, height=4, units="in", res=300)
 # Setting up a plot of 3x3 grids
 par(mfrow=c(2,3))
@@ -78,7 +78,7 @@ dev.off()
 
 # Presence/Absence model
 
-png(filename="roms_tt_split_output/figures/tosz_pres_abs_reduced_2022_07_13.png",
+png(filename="roms_tt_split_output/figures/tosz_pres_abs_reduced.png",
     width=6, height=4, units="in", res=300)
 # Setting up a plot of 3x3 grids
 par(mfrow=c(2,3))
