@@ -2,11 +2,11 @@ from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
 import re
 import glob
-from pandas import DataFrame
+# from pandas import DataFrame
 import datetime
-import pandas as pd
+# import pandas as pd
 import pyroms
-import pyroms_toolbox
+# import pyroms_toolbox
 import numpy as np
 import numpy.ma as ma
 import netCDF4
@@ -23,39 +23,17 @@ lat = grd.hgrid.lat_rho
 # The reference file
 ref_file = '/Volumes/P13/ROMS/NWA/NWA-SZ.HCob10T/1980/NWA-SZ.HCob10T_avg_1980-06-18T01:00:00.nc'
 
-# Temperature
-# temp_1980s_f = '/Volumes/P4/workdir/jeewantha/data/decadal_means/annual_means/1980s/1980-decade-temp.txt'
-
-
 # Now get a reference file to get the mask
 ref = pyroms.io.Dataset(ref_file)
 ref_temp = ref.variables['temp'][0]
 ref_mask = ma.getmask(ref_temp[0])
-
-# temp_1980s = np.loadtxt(temp_1980s_f)
-
-# Get the masked version of the numpy arrays
-# temp_1980s_ma = ma.array(temp_1980s, mask=ref_mask)
-
-# Reset the longitudes
-# lon = lon - 360
-
-# Mercator Projection
-# llcrnrlat,llcrnrlon,urcrnrlat,urcrnrlon
-# are the lat/lon values of the lower left and upper right corners
-# of the map.
-# lat_ts is the latitude of true scale.
-# resolution = 'c' means use crude resolution coastlines.
-
-# 2022-06-20
-# This is copied from `plot_covariates_through_time.py`
 
 # Covariates for 1980s
 temp_1980s_f = '/Users/jeewantha/Code/bsb_modeling/data/decadal_means/annual_means/1980s/1980-decade-temp.txt'
 o2_1980s_f = '/Users/jeewantha/Code/bsb_modeling/data/decadal_means/annual_means/1980s/1980-decade-o2.txt'
 salt_1980s_f = '/Users/jeewantha/Code/bsb_modeling/data/decadal_means/annual_means/1980s/1980-decade-salt.txt'
 zplk_1980s_f = '/Volumes/P13/workdir/jeewantha/data/decadal_means/annual_means/1980s/1980-decade-zplk.txt'
-mi_1980s_f = '/Users/jeewantha/Code/bsb_modeling/data/decadal_means/annual_means/1980s/mi_1980s.txt'
+mi_1980s_f = '/Users/jeewantha/Code/bsb_modeling/data/decadal_means/annual_means/1980s/1980-decade-mi.txt'
 
 
 # Covariates for 2000s
@@ -63,7 +41,7 @@ temp_2000s_f = '/Users/jeewantha/Code/bsb_modeling/data/decadal_means/annual_mea
 o2_2000s_f = '/Users/jeewantha/Code/bsb_modeling/data/decadal_means/annual_means/2000s/2000-decade-o2.txt'
 salt_2000s_f = '/Users/jeewantha/Code/bsb_modeling/data/decadal_means/annual_means/2000s/2000-decade-salt.txt'
 zplk_2000s_f = '/Volumes/P13/workdir/jeewantha/data/decadal_means/annual_means/2000s/2000-decade-zplk.txt'
-mi_2000s_f = '/Users/jeewantha/Code/bsb_modeling/data/decadal_means/annual_means/2000s/mi_2000s.txt'
+mi_2000s_f = '/Users/jeewantha/Code/bsb_modeling/data/decadal_means/annual_means/2000s/2000-decade-mi.txt'
 
 # Read them into arrays
 temp_1980s = np.loadtxt(temp_1980s_f)
@@ -77,6 +55,8 @@ o2_2000s = np.loadtxt(o2_2000s_f)
 salt_2000s = np.loadtxt(salt_2000s_f)
 zplk_2000s = np.loadtxt(zplk_2000s_f)
 mi_2000s = np.loadtxt(mi_2000s_f)
+
+print('Done')
 
 # Now to reset some values
 # If a value is below zero for O2 and Metabolic Index, set it to 0
@@ -135,57 +115,7 @@ lon = lon - 360
 
 text_x = -100
 text_y = 50
-"""
-# Draw the maps on the axes
-fig, ax = plt.subplots(4, 2)
-ax1 = ax[0, 0]
-a = Basemap(projection='merc', llcrnrlat=28, urcrnrlat=50,\
-            llcrnrlon=-83, urcrnrlon=-56, resolution='l', ax=ax1)
-# lat_ts=20
-a.drawcoastlines()
-a.fillcontinents(color='#feb24c')
-# draw parallels and meridians.
-a.drawmapboundary()
-colors_a = a.pcolor(lon, lat, temp_diff, cmap='coolwarm', latlon=True)
-a.colorbar(colors_a, location='right', label='Celsius')
 
-ax2 = ax[0, 1]
-b = Basemap(projection='merc', llcrnrlat=28, urcrnrlat=50,\
-            llcrnrlon=-83, urcrnrlon=-56, resolution='l', ax=ax2)
-# lat_ts=20
-b.drawcoastlines()
-b.fillcontinents(color='#feb24c')
-# draw parallels and meridians.
-b.drawmapboundary()
-colors_b = b.pcolor(lon, lat, o2_diff, cmap='BrBG', latlon=True)
-b.colorbar(colors_b, location='right')
-
-ax3 = ax[1, 0]
-c = Basemap(projection='merc', llcrnrlat=28, urcrnrlat=50,\
-            llcrnrlon=-83, urcrnrlon=-56, resolution='l', ax=ax3)
-# lat_ts=20
-c.drawcoastlines()
-c.fillcontinents(color='#feb24c')
-# draw parallels and meridians.
-c.drawmapboundary()
-colors_c = c.pcolor(lon, lat, salt_diff, cmap='PiYG', latlon=True)
-c.colorbar(colors_c, location='right')
-
-ax4 = ax[1, 1]
-d = Basemap(projection='merc', llcrnrlat=28, urcrnrlat=50,\
-            llcrnrlon=-83, urcrnrlon=-56, resolution='l', ax=ax4)
-# lat_ts=20
-d.drawcoastlines()
-d.fillcontinents(color='#feb24c')
-# draw parallels and meridians.
-d.drawmapboundary()
-colors_d = d.pcolor(lon, lat, mi_diff, cmap='Spectral', latlon=True)
-d.colorbar(colors_d, location='right')
-
-fig.savefig("/Users/jeewantha/Code/bsb_modeling/plots/covariates_with_subplots_2.png", dpi=300, orientation='portrait')
-
-print('Done with drawing the map')
-"""
 
 data_to_be_plotted = [[temp_1980s, temp_diff, o2_1980s, o2_diff],
                       [salt_1980s, salt_diff, zplk_1980s, zplk_diff],
@@ -226,45 +156,43 @@ for r in range(rows):
         ax1 = ax[r][c]
         a = Basemap(projection='merc', llcrnrlat=28, urcrnrlat=50, \
                     llcrnrlon=-83, urcrnrlon=-56, resolution='l', ax=ax1)
-        # lat_ts=20
-        a.drawcoastlines()
-        a.fillcontinents(color='#e5e5e5')
-        # Original color - #feb24c#e5e5e5
-        # draw parallels and meridians.
         a.drawmapboundary()
         colors_a = None
         colorb = None
         if map_labels[r][c] == '(f)':
-            colors_a = a.pcolor(lon, lat, data_to_be_plotted[r][c], cmap=cmaps[r][c], vmin=-2.5, vmax=2.5, latlon=True)
+            colors_a = a.pcolor(lon, lat, data_to_be_plotted[r][c], cmap=cmaps[r][c], vmin=-1, vmax=1, latlon=True)
         elif map_labels[r][c] == '(h)':
-            colors_a = a.pcolor(lon, lat, data_to_be_plotted[r][c], cmap=cmaps[r][c], vmin=-8.5e-06, vmax=8.5e-06, latlon=True)
+            colors_a = a.pcolor(lon, lat, data_to_be_plotted[r][c], cmap=cmaps[r][c], vmin=-4e-06, vmax=4e-06, latlon=True)
         else:
             colors_a = a.pcolor(lon, lat, data_to_be_plotted[r][c], cmap=cmaps[r][c], latlon=True)
         # If else starts here
         if map_labels[r][c] == '(d)':
-            colorb = a.colorbar(colors_a, location='bottom', ticks=[-1.5, -0.75, 0, 0.75, 1.5])
-            colorb.ax.set_xticklabels(['-1.5', '-0.75', '0', '0.75', '1.5'])
+            colorb = a.colorbar(colors_a, location='bottom', ticks=[-1, -0.5, 0, 0.5, 1])
+            colorb.ax.set_xticklabels(['-1', '-0.5', '0', '0.5', '1'])
         elif map_labels[r][c] == '(e)':
             colorb = a.colorbar(colors_a, location='bottom', ticks=[0, 10, 20, 30, 40])
             colorb.ax.set_xticklabels(['0', '10', '20', '30', '40'])
         elif map_labels[r][c] == '(f)':
-            colorb = a.colorbar(colors_a, location='bottom', ticks=[-2, -1, 0, 1, 2])
-            colorb.ax.set_xticklabels(['-2', '-1', '0', '1', '2'])
+            colorb = a.colorbar(colors_a, location='bottom', ticks=[-1, -0.5, 0, 0.5, 1])
+            colorb.ax.set_xticklabels(['-1', '-0.5', '0', '0.5', '1'])
         elif map_labels[r][c] == '(j)':
             colorb = a.colorbar(colors_a, location='bottom', ticks=[-0.8, -0.4, 0, 0.4, 0.8])
             colorb.ax.set_xticklabels(['-0.8', '-0.4', '0', '0.4', '0.8'])
         elif map_labels[r][c] == '(g)':
             colorb = a.colorbar(colors_a, location='bottom', ticks=[0, 0.0000325, 0.000065, 0.0000975, 0.00013])
             colorb.ax.set_xticklabels(['0', '3.25', '6.5', '9.75', '13'])
-            colorb.formatter.set_powerlimits((0, 0))
+            # colorb.formatter.set_powerlimits((0, 0))
         elif map_labels[r][c] == '(h)':
-            colorb = a.colorbar(colors_a, location='bottom', ticks=[-8e-06, -4e-06, 0, 4e-06, 8e-06])
-            colorb.ax.set_xticklabels(['-8', '-4', '0', '4', '8'])
+            colorb = a.colorbar(colors_a, location='bottom', ticks=[-4e-06, -2e-06, 0, 2e-06, 4e-06])
+            colorb.ax.set_xticklabels(['-4', '-2', '0', '2', '4'])
             # colorb = a.colorbar(colors_a, location='bottom', ticks=[-8e-06, -2.75e-06, 2.5e-06, 7.75e-06, 13e-06])
             # colorb.ax.set_xticklabels(['-8', '-2.75', '2.5', '7.75', '13'])
-            colorb.formatter.set_powerlimits((0, 0))
+            # colorb.formatter.set_powerlimits((0, 0))
         else:
             colorb = a.colorbar(colors_a, location='bottom')
+        # Fill in the continents
+        a.drawcoastlines()
+        a.fillcontinents(color='#e5e5e5')
         # Else ends before this
         # Set label size at 5
         colorb.ax.tick_params(labelsize=10)
@@ -279,5 +207,4 @@ for r in range(rows):
 
 
 plt.tight_layout()
-# plt.subplots_adjust(pad=-5.0)
 fig.savefig("/Users/jeewantha/Code/bsb_modeling/plots/covariates_with_subplots.png", dpi=300)
