@@ -1,6 +1,6 @@
 # Repository for Bandara, Curchitser, Pinsky (2023)
 
-This repository contains the code necessary for running the calculations, species distribution models, and visualizations in Bandara et al. (2023) published in Global Change Biology. 
+This repository contains the code and data necessary for running the calculations, species distribution models, and visualizations in Bandara et al. (2023) published in Global Change Biology. 
 
 Please read this guide to properly execute the code.
 
